@@ -1,40 +1,23 @@
-import java.lang.*;
-
 class Solution {
     boolean solution(String s) {
         boolean answer = true;
-
-        String str=s.toUpperCase();
-        char[] charArray=new char[str.length()];
-        int cnt1=0,cnt2=0;
+        int[] count = new int[2];
         
-        for(int i=0; i<str.length(); i++)
-        {
-            charArray[i]=str.charAt(i);
-        }
+        char[] ch = s.toUpperCase().toCharArray();
         
-        for(int i=0; i<str.length(); i++)
-        {
-            if(charArray[i]=='P')
-            {
-                cnt1++;
+        for(int i = 0; i< ch.length; i++){
+            if(ch[i] == 'P'){
+                count[0]++;
+                continue;
             }
-            else if(charArray[i]=='Y')
-            {
-                cnt2++;
+            if(ch[i] == 'Y'){
+                count[1]++;
+                continue;
             }
         }
-        
-        if(cnt1==cnt2)
-        {
-            answer=true;
-        }
-        else
-        {
-            answer=false;
-        }
-        
-
+       if(count[0] != count[1]){
+           answer = false;
+       }
         return answer;
     }
 }
