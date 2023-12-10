@@ -33,10 +33,8 @@ public class Main {
 	}
 
 	private static boolean isNumber(String str) {
-		for(int i = 0; i < str.length(); i++) {
-			if(Character.isDigit(str.charAt(i))) {
-				return true;
-			}
+		if(Character.isDigit(str.charAt(0))){
+			return true;
 		}
 		return false;
 	}
