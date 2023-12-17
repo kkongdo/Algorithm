@@ -6,17 +6,25 @@ import java.util.Queue;
 
 public class Main {
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		int N=Integer.parseInt(br.readLine());
-		Queue<Integer> queue=new LinkedList<Integer>();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Queue<Integer> queue = new LinkedList<Integer>();
 		
-		for(int i=1; i<=N; i++) {
-			queue.add(i);
+		int N = Integer.parseInt(br.readLine());
+		for(int i = 1; i <= N; i++) {
+			queue.offer(i);
 		}
-		while(queue.size()>1) {
+		while(true) {
 			queue.poll();
-			queue.add(queue.poll());
+			if(queue.size() == 0) {
+				System.out.println(1);
+				break;
+			}
+			int num = queue.poll();
+			queue.offer(num);
+			if(queue.size() == 1) {
+				System.out.println(queue.poll());
+				break;
+			}
 		}
-		System.out.println(queue.poll());
 	}
 }
