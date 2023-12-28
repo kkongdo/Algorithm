@@ -1,48 +1,39 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
-	static int N;
-	static int M;
-	static int[] nums;
-	static int[] result;
 	static boolean[] visited;
+	static int[] arr;
+	static StringBuilder sb = new StringBuilder();
 	
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
+		arr = new int[M];
+		visited = new boolean[N];
 		
-		N=sc.nextInt();
-		M=sc.nextInt();
-		nums=new int[N];
-		result=new int[M];
-		visited=new boolean[nums.length];
-		
-		for(int i=0; i<N; i++) {
-			nums[i]=i+1;
-		}
-		
-		recur(0);
-		sc.close();
+		dfs(N, M, 0);
+		System.out.println(sb);
 	}
-
-	private static void recur(int depth) {
-		if(depth==M) {
-			print();
+	private static void dfs(int n, int m, int depth) {
+		if(depth == m) {
+			for(int value : arr) {
+				sb.append(value).append(" ");
+			}
+			sb.append("\n");
 			return;
 		}
-		for(int i=0; i<nums.length; i++) {
-			if(visited[i]==false) {
-				result[depth]=nums[i];
-				visited[i]=true;
-				recur(depth+1);
-				visited[i]=false;
+		for(int i = 0; i < n; i++) {
+			if(!visited[i]) {
+				visited[i] = true;
+				arr[depth] = i + 1;
+				dfs(n, m, depth + 1);
+				visited[i] = false;
 			}
 		}
-	}
-
-	private static void print() {
-		for(int num : result) {
-			System.out.print(num+" ");
-		}
-		System.out.println();
 	}
 }
