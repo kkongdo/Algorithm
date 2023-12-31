@@ -11,9 +11,9 @@ public class Main {
 		int num1 = Integer.parseInt(st.nextToken());
 		int num2 = Integer.parseInt(st.nextToken());
 		int c = Integer.parseInt(br.readLine());
-		int n = Integer.parseInt(br.readLine());
+		int n0 = Integer.parseInt(br.readLine());
 		
-		if( (num1 * n) + num2 <= c * n && c >= num1) {
+		if( (num1 * n0) + num2 <= c * n0 && c >= num1) {
 			System.out.println(1);
 		}
 		else {
