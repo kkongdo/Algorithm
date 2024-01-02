@@ -16,10 +16,11 @@ public class Main {
 		for(int i = 0; i < N; i++) {
 			sorted[i] = nums[i] = Integer.parseInt(st.nextToken()); 
 		}
+		
 		Arrays.sort(sorted);
-		int rank = 0;
 		
 		HashMap<Integer, Integer> maps = new HashMap<Integer, Integer>();
+		int rank = 0;
 		for(int num : sorted) {
 			if(!maps.containsKey(num)) {
 				maps.put(num, rank);
