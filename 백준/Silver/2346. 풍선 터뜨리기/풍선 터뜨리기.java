@@ -44,7 +44,6 @@ public class Main {
 		System.out.println(sb);
 	}
 }
-
 class Balloon{
 	int index;
 	int value;
