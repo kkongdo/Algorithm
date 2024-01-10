@@ -34,7 +34,7 @@ public class Main {
 			MIN = Math.min(MIN , num);
 			return;
 		}
-		for(int i = 0 ; i < 4; i++) {
+		for(int i = 0; i < 4; i++) {
 			if(operator[i] > 0) {
 				operator[i] --;
 				switch(i) {
