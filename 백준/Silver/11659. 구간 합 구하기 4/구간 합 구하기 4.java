@@ -22,15 +22,7 @@ public class Main {
 			st = new StringTokenizer(br.readLine());
 			int i = Integer.parseInt(st.nextToken());
 			int j = Integer.parseInt(st.nextToken());
-			if(i == 1) {
-				System.out.println(sums[j]);
-			}
-			else if(i == j) {
-				System.out.println(nums[i]);
-			}
-			else {
 				System.out.println(sums[j] - sums[i - 1]);
-			}
 		}
 	}
 }
