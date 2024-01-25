@@ -19,7 +19,7 @@ public class Main {
 		}
 		long tmp = pow(a, b / 2);
 		if(b % 2 == 1) {
-			return (tmp * tmp % C) * a % C;
+			return ((tmp * tmp % C) * (a % C)) % C ;
 		}
 		return tmp * tmp % C;
 	}
