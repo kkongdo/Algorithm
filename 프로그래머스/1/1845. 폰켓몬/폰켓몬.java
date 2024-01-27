@@ -2,18 +2,14 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] nums) {
-        Deque<Integer> list = new ArrayDeque<Integer>();
-        Arrays.sort(nums);
-        list.offer(nums[0]);
-        int count = nums.length / 2;
-        for(int i = 1; i < nums.length; i++){
-            if(count == list.size()){
-                break;
-            }
-            if(nums[i] != list.peekLast()){
-                list.offer(nums[i]);
-            }
+        HashSet<Integer> phoneKet = new HashSet<Integer>();
+        for(int phone : nums){
+            phoneKet.add(phone);
         }
-        return list.size();
+        if(phoneKet.size() <= nums.length / 2){
+            return phoneKet.size();
+        }else{
+            return nums.length / 2;
+        }
     }
 }
