@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -20,7 +19,6 @@ public class Main {
 				max = nums[i];
 			}
 		}
-		Arrays.sort(nums);
 		System.out.println(uppperBound(nums, max, M));
 	}
 
