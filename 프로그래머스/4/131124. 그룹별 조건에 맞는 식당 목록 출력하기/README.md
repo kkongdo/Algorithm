@@ -1,6 +1,6 @@
 # [level 4] 그룹별 조건에 맞는 식당 목록 출력하기 - 131124 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131124) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131124?language=mysql) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@ Empty
 
 ### 제출 일자
 
-2024년 1월 6일 15:15:10
+2024년 04월 29일 18:49:38
 
 ### 문제 설명
 
