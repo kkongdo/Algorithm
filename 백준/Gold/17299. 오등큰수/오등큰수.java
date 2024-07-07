@@ -6,9 +6,10 @@ import java.util.StringTokenizer;
 
 public class Main {
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		final int MAX = 1_000_001;
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
+		
+		final int MAX = 1_000_001;
 	
 		int[] arr = new int[N];
 		int[] count = new int[MAX];
