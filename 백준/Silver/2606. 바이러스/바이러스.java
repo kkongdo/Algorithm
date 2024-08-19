@@ -7,8 +7,7 @@ import java.util.StringTokenizer;
 public class Main {
 	static boolean[] visited;
 	static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-	static int result;
-	static int count = 1;
+	static int result = 0;
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -29,13 +28,13 @@ public class Main {
 			graph.get(num2).add(num1);
 		}
 		DFS(1);
-		System.out.println(result);
+		System.out.println(result - 1);
 	}
 	private static void DFS(int i) {
 		visited[i] = true;
+		result++;
 		for(Integer num : graph.get(i)) {
 			if(!visited[num]) {
-				result = count++;
 				DFS(num);
 			}
 		}
