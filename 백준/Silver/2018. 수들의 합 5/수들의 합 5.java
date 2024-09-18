@@ -1,32 +1,25 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st=new StringTokenizer(br.readLine());
-		
-		int N=Integer.parseInt(st.nextToken());
-		int count=1;
-		int[] nums=new int[N];
-		int sum=1;
-		int start=1, end=1;
-		
-		while(end !=N ) {
-			if(sum==N) {
-				end++;
-				sum+=end;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int N = Integer.parseInt(br.readLine());
+		int startIndex = 1, endIndex = 1, count = 1, sum = 1;
+		while(endIndex != N) {
+			if(sum == N) {
 				count++;
+				endIndex++;
+				sum = sum + endIndex;
 			}
-			else if(sum>N) {
-				sum-=start;
-				start++;
+			else if(sum > N) {
+				sum = sum - startIndex;
+				startIndex++;
 			}
-			else if(sum<N) {
-				end++;
-				sum+=end;
+			else {
+				endIndex++;
+				sum = sum + endIndex;
 			}
 		}
 		System.out.println(count);
