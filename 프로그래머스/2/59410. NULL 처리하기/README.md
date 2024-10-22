@@ -1,6 +1,6 @@
 # [level 2] NULL 처리하기 - 59410 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59410) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59410?language=mysql) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@ Empty
 
 ### 제출 일자
 
-2023년 12월 6일 14:9:2
+2024년 10월 22일 16:11:49
 
 ### 문제 설명
 
