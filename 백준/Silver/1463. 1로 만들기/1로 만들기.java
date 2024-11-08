@@ -3,31 +3,20 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-	static int count = 0;
-	static Integer[] dp;
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(br.readLine());
-		dp = new Integer[N + 1];
-		dp[0] = dp[1] = 0;
-		System.out.println(recur(N));
-	}
-
-	private static int recur(int n) {
-		if(dp[n] == null) {
-			if(n % 6 == 0) {
-				dp[n] = Math.min(recur(n - 1), Math.min(recur(n / 3), recur(n / 2))) + 1;
+		int X = Integer.parseInt(br.readLine());
+		int[] dp = new int[X + 1]; // 숫자를 1로 만드는데 필요한 최소 연산 횟수
+		
+		for (int i = 2; i <= X; i++) {
+			dp[i] = dp[i - 1] + 1;
+			if (i % 2 == 0) {
+				dp[i] = Math.min(dp[i], dp[i / 2] + 1);
 			}
-			else if(n % 3 == 0) {
-				dp[n] = Math.min(recur(n / 3), recur(n - 1)) + 1;
-			}
-			else if(n % 2 == 0){
-				dp[n] = Math.min(recur(n / 2), recur(n - 1)) + 1 ;
-			}
-			else {
-				dp[n] = recur(n - 1) + 1;
+			if (i % 3 == 0) {
+				dp[i] = Math.min(dp[i], dp[i / 3] + 1);
 			}
 		}
-		return dp[n];
+		System.out.println(dp[X]);
 	}
 }
